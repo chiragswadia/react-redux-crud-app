@@ -12,8 +12,8 @@
 
 .App-header {
   background-color: #1B4691;
-  height: 150px;
-  padding: 20px;
+  height: 50px;
+  padding: 15px;
   color: white;
 }
 
@@ -40,4 +40,13 @@
     opacity: 1;
     transform: scale(1);
   }
+}
+
+/* Merchant Component Styles */
+.singleMerchantContainer{
+  width: 450px;
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  overflow: hidden;
 }
