@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import MerchantComponent from './merchantComponent';
+import BidsModalComponent from './bidsModalComponent';
 
 class MerchantListComponent extends Component{
     render(){
@@ -19,7 +20,7 @@ class MerchantListComponent extends Component{
                         email={merchant.email}
                         phone={merchant.phone}
                         hasPremium={merchant.hasPremium}
-                        bids={merchant.bids}
+                        bidsModalComponent={<BidsModalComponent key={merchant.id} bids={merchant.bids}/>}
                     />
                 )}
 

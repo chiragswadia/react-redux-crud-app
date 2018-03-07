@@ -15,7 +15,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 class MerchantListContainer extends Component{
-    
+
     componentWillMount(){
         this.props.getMerchantList();
     }
