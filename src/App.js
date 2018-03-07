@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import MerchantListComponent from './components/merchantListComponent';
+import MerchantListContainer from './containers/merchantListContainer';
 
 class App extends Component {
   render() {
@@ -12,7 +12,7 @@ class App extends Component {
           Welcome to Merchants App
         </div>
 
-        <MerchantListComponent merchantList={[]} />
+        <MerchantListContainer />
         
       </div>
     );

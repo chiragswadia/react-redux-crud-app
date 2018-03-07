@@ -6,10 +6,10 @@ class MerchantComponent extends Component{
 
         return (
             <div className="singleMerchantContainer row">
-                <div className="col-md-3">
+                <div className="col-md-5">
                     <img src={avatarUrl} alt="Avatar URL"/>
                 </div>
-                <div className="col-md-9">
+                <div className="col-md-7">
                     Name : {firstname} {lastname} <br/>
                     Email : {email} <br/>
                     Phone : {phone} <br/>

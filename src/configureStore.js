@@ -1,7 +1,8 @@
-import { createStore, compose } from 'redux';
+import { createStore, compose, applyMiddleware } from 'redux';
 import reducers from './reducers';
+import thunk from 'redux-thunk';
 
-const configureStore = (preloadedState) => {
+const configureStore = (initialState) => {
   const enhancers = [];
 
   if (process.env.NODE_ENV === 'development') {
@@ -14,8 +15,9 @@ const configureStore = (preloadedState) => {
 
   return createStore(
     reducers,
-    preloadedState,
+    initialState,
     compose(
+      applyMiddleware(thunk),
       ...enhancers
     )
   );

@@ -12,7 +12,7 @@ const merchantListResponse = {
             id: '1',
             firstname: 'Merchant 1 FN',
             lastname: 'Merchant 1 LN',
-            avatarUrl: 'http://lorempixel.com/100/100/',
+            avatarUrl: 'https://placeimg.com/150/150/tech',
             email: 'merchant@gmail.com',
             phone: '9090909090',
             hasPremium: false,
@@ -27,10 +27,10 @@ const merchantListResponse = {
         },
 
         {
-            id: '1',
+            id: '2',
             firstname: 'Merchant 2 FN',
             lastname: 'Merchant 2 LN',
-            avatarUrl: 'http://lorempixel.com/100/100/',
+            avatarUrl: 'https://placeimg.com/150/150/tech',
             email: 'merchant2@gmail.com',
             phone: '9090909090',
             hasPremium: true,
