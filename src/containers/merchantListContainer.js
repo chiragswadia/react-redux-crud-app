@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import MerchantListComponent from '../components/merchantListComponent';
-import { getMerchantList } from '../actions/merchantActions';
+import { getMerchantList, deleteMerchant } from '../actions/merchantActions';
 
 const mapStateToProps = (state, nextProps) => ({
    merchantList: state.merchantReducer.merchantList
@@ -10,7 +10,11 @@ const mapStateToProps = (state, nextProps) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     getMerchantList: () => {
-        dispatch( getMerchantList() )
+        dispatch( getMerchantList() );
+    },
+
+    deleteMerchant: (id) => {
+        dispatch( deleteMerchant(id) )
     }
 });
 
@@ -22,10 +26,10 @@ class MerchantListContainer extends Component{
 
     render(){
 
-        const { merchantList } = this.props;
+        const { merchantList, deleteMerchant } = this.props;
 
         return (
-            <MerchantListComponent merchantList={merchantList} />
+            <MerchantListComponent merchantList={merchantList} deleteMerchant={deleteMerchant} />
         )
     }
 }

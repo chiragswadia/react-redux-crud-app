@@ -2,7 +2,7 @@
 // It uses setTimeout to simulate the delay of an API call.
 // All calls return promises.
 
-const delay = 1500; // miliseconds
+const delay = 1000; // miliseconds
 
 const merchantListResponse = {
     status: 0,
@@ -85,7 +85,7 @@ const addMerchant = (merchant) => {
     });
 };
 
-const removeMerchant = (merchant_id) => {
+const deleteMerchant = (merchant_id) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(Object.assign(merchantRemovedResponse, {data: merchant_id }));
@@ -104,6 +104,6 @@ const updateMerchant = (merchant) => {
 export {
     getMerchants,
     addMerchant,
-    removeMerchant,
+    deleteMerchant,
     updateMerchant
 }

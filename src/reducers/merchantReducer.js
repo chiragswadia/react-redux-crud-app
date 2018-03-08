@@ -6,8 +6,10 @@ const initialState = {
 
 function merchantReducer(state = initialState, action){
     switch(action.type){
-        case actionTypes.GET_MERCHANTS_LIST:
+        case actionTypes.GET_MERCHANTS_LIST_SUCCESS:
         case actionTypes.GET_MERCHANTS_LIST_FAILURE:
+        case actionTypes.DELETE_MERCHANT_SUCCESS:
+        case actionTypes.DELETE_MERCHANT_FAILURE:
             return Object.assign({}, state, action.payload)
         default:
             return state;

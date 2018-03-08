@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 
 import MerchantComponent from './merchantComponent';
 import BidsModalComponent from './bidsModalComponent';
+import DeleteMerchantComponent from './deleteMerchantComponent';
 
 class MerchantListComponent extends Component{
     render(){
 
-        const { merchantList } = this.props;
+        const { merchantList, deleteMerchant } = this.props;
 
         return (
             <div>
@@ -20,7 +21,17 @@ class MerchantListComponent extends Component{
                         email={merchant.email}
                         phone={merchant.phone}
                         hasPremium={merchant.hasPremium}
-                        bidsModalComponent={<BidsModalComponent key={merchant.id} bids={merchant.bids}/>}
+                        bidsModalComponent={
+                            <BidsModalComponent 
+                                key={'bids-' + merchant.id}
+                                bids={merchant.bids}
+                            />}
+                        deleteMerchantComponent={
+                            <DeleteMerchantComponent
+                                key={'delete-' + merchant.id}
+                                id={merchant.id}
+                                deleteMerchant={() => deleteMerchant(merchant.id)}
+                            />}
                     />
                 )}
 

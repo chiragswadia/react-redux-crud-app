@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class MerchantComponent extends Component{
     render(){
-        const {id, firstname, lastname, avatarUrl, email, phone, hasPremium, bidsModalComponent} = this.props;
+        const {id, firstname, lastname, avatarUrl, email, phone, hasPremium, bidsModalComponent, deleteMerchantComponent} = this.props;
 
         return (
             <div className="singleMerchantContainer row">
@@ -15,6 +15,7 @@ class MerchantComponent extends Component{
                     Phone : {phone} <br/>
                     Premium : {hasPremium ? 'Yes': 'No'}
                     {bidsModalComponent}
+                    {deleteMerchantComponent}
                 </div>
             </div>
         )

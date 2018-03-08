@@ -32,4 +32,3 @@ Merchant {
 }
 
 ## Seed link
-https://github.com/auto1-oss
