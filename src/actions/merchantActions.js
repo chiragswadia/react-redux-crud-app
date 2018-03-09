@@ -4,7 +4,6 @@ import axios from 'axios';
 const API_SERVER = 'http://localhost:3001';
 
 const getMerchantList = () => {
-
     return (dispatch, getState) => {
         axios.get(API_SERVER + '/merchants').then(function(response){
             const merchantList = response.data;
@@ -13,7 +12,6 @@ const getMerchantList = () => {
             dispatch( getMerchantListFailure(error) ) // log the error or show in popup/alert
         })
     }
-   
 };
 
 const getMerchantListSuccess = (merchantList) => {
@@ -65,6 +63,36 @@ const deleteMerchantFailure = (error) => {
     }
 };
 
+/*******************************************************************************************/
+
+const addMerchant = (request_data) => {
+    return (dispatch, getState) => {
+        axios.post(API_SERVER + '/merchants', request_data).then(function(){
+            dispatch( addMerchantSuccess() );
+            dispatch( getMerchantList() );
+        }).catch(function(error){
+            dispatch( addMerchantFailure() );
+        })
+    }
+};
+
+const addMerchantSuccess = () => {
+    return {
+        type: actionTypes.ADD_MERCHANT_SUCCESS,
+        payload: {
+
+        }
+    }
+};
+
+const addMerchantFailure = (error) => {
+    return {
+        type: actionTypes.ADD_MERCHANT_FAILURE,
+        payload: {
+
+        }
+    }
+};
 
 export {
     getMerchantList,
@@ -72,5 +100,8 @@ export {
     getMerchantListFailure,
     deleteMerchant,
     deleteMerchantSuccess,
-    deleteMerchantFailure
+    deleteMerchantFailure,
+    addMerchant,
+    addMerchantSuccess,
+    addMerchantFailure
 };

@@ -10,6 +10,8 @@ function merchantReducer(state = initialState, action){
         case actionTypes.GET_MERCHANTS_LIST_FAILURE:
         case actionTypes.DELETE_MERCHANT_SUCCESS:
         case actionTypes.DELETE_MERCHANT_FAILURE:
+        case actionTypes.ADD_MERCHANT_SUCCESS:
+        case actionTypes.ADD_MERCHANT_FAILURE:
             return Object.assign({}, state, action.payload)
         default:
             return state;

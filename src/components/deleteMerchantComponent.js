@@ -20,4 +20,4 @@ class DeleteMerchantComponent extends Component{
     }
 }
 
-export default DeleteMerchantComponent
+export default DeleteMerchantComponent;

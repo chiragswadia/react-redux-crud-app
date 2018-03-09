@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import AddMerchantContainer from './addMerchantContainer';
 import MerchantListComponent from '../components/merchantListComponent';
 import { getMerchantList, deleteMerchant } from '../actions/merchantActions';
 
@@ -20,16 +21,19 @@ const mapDispatchToProps = (dispatch) => ({
 
 class MerchantListContainer extends Component{
 
-    componentWillMount(){
+    componentWillMount = () => {
         this.props.getMerchantList();
     }
 
-    render(){
+    render = () => {
 
         const { merchantList, deleteMerchant } = this.props;
 
         return (
-            <MerchantListComponent merchantList={merchantList} deleteMerchant={deleteMerchant} />
+            <div>
+                <AddMerchantContainer />
+                <MerchantListComponent merchantList={merchantList} deleteMerchant={deleteMerchant} />
+            </div>
         )
     }
 }

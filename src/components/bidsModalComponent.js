@@ -25,7 +25,8 @@ class BidsModalComponent extends Component{
         return (
 
             <div>
-                <Button bsStyle="default" className="mdBtn" onClick={() => this.open()}>{'Show Bids'}</Button>
+                {bids.length > 0 &&
+                <Button bsStyle="default" className="mdBtn" onClick={() => this.open()}>{'Show Bids'}</Button>}
 
                 {this.state.show &&
                     <Modal className="modal-container bidsModal" 

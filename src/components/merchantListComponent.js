@@ -13,7 +13,7 @@ class MerchantListComponent extends Component{
             <div>
                 {merchantList.map( (merchant) => 
                     <MerchantComponent
-                        key={merchant.id}
+                        key={'merchant-'+merchant.id}
                         id={merchant.id}
                         firstname={merchant.firstname}
                         lastname={merchant.lastname}

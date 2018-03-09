@@ -1,44 +1,54 @@
 {
-    "merchants":  [
+  "merchants": [
+    {
+      "id": "1",
+      "firstname": "Merchant 1 FN",
+      "lastname": "Merchant 1 LN",
+      "avatarUrl": "https://placeimg.com/150/150/tech",
+      "email": "merchant@gmail.com",
+      "phone": "9090909090",
+      "hasPremium": false,
+      "bids": [
         {
-            "id": "1",
-            "firstname": "Merchant 1 FN",
-            "lastname": "Merchant 1 LN",
-            "avatarUrl": "https://placeimg.com/150/150/tech",
-            "email": "merchant@gmail.com",
-            "phone": "9090909090",
-            "hasPremium": false,
-            "bids": [
-                {
-                    "id": "b1",
-                    "carTitle": "Car Title Example",
-                    "amount": "20000",
-                    "created": "2018-03-07"
-                }
-            ]
+          "id": "b1",
+          "carTitle": "Car Title Example",
+          "amount": "20000",
+          "created": "2018-03-07"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "firstname": "Merchant 2 FN",
+      "lastname": "Merchant 2 LN",
+      "avatarUrl": "https://placeimg.com/150/150/tech",
+      "email": "merchant@gmail.com",
+      "phone": "9090909090",
+      "hasPremium": true,
+      "bids": [
+        {
+          "id": "b2",
+          "carTitle": "Car Title Example",
+          "amount": "12000",
+          "created": "2018-03-06"
         },
         {
-            "id": "2",
-            "firstname": "Merchant 2 FN",
-            "lastname": "Merchant 2 LN",
-            "avatarUrl": "https://placeimg.com/150/150/tech",
-            "email": "merchant@gmail.com",
-            "phone": "9090909090",
-            "hasPremium": true,
-            "bids": [
-                {
-                    "id": "b2",
-                    "carTitle": "Car Title Example",
-                    "amount": "12000",
-                    "created": "2018-03-06"
-                },
-                {
-                    "id": "b3",
-                    "carTitle": "Car Title Example 2",
-                    "amount": "15000",
-                    "created": "2018-03-07"
-                }
-            ]
+          "id": "b3",
+          "carTitle": "Car Title Example 2",
+          "amount": "15000",
+          "created": "2018-03-07"
         }
-    ]
+      ]
+    },
+    {
+      "firstname": "Chirag",
+      "lastname": "Swadia",
+      "email": "chiragswadia@mailinator.com",
+      "phone": "1234567890",
+      "avatarUrl": "http://lorempixel.com/150/150",
+      "hasPremium": true,
+      "bids": [],
+      "id": "219henf"
+    }
+  ]
 }
