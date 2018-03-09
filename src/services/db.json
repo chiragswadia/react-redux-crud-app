@@ -39,16 +39,6 @@
           "created": "2018-03-07"
         }
       ]
-    },
-    {
-      "firstname": "Chirag",
-      "lastname": "Swadia",
-      "email": "chiragswadia@mailinator.com",
-      "phone": "1234567890",
-      "avatarUrl": "http://lorempixel.com/150/150",
-      "hasPremium": true,
-      "bids": [],
-      "id": "219henf"
     }
   ]
 }

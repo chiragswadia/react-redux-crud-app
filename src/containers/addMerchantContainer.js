@@ -9,12 +9,19 @@ const mapStateToProps = (state, nextProps) => ({
    
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch, ownProps) => ({
     handleSubmit: (formData) => {
-        formData['bids'] = []; // For new record, bids count will be blank
-        formData['hasPremium'] = formData['hasPremium'] === 'Yes' ? true : false; // If user has explicitly selected Yes
-        dispatch( addMerchant(formData) );
-        dispatch( reset('addmerchant') );
+        
+        formData['hasPremium'] = (formData['hasPremium'] === 'Yes') ? true : false; // If user has explicitly selected Yes
+        
+        if( ownProps.isEditMode ){
+            
+        }else{
+            formData['bids'] = []; // For new record, bids count will be blank
+            dispatch( addMerchant(formData) );
+            dispatch( reset('addmerchant') );
+        }
+        
     },
 
 });
@@ -23,10 +30,10 @@ class AddMerchantContainer extends Component{
 
     render(){
 
-        const { handleSubmit, onBlur } = this.props;
+        const { handleSubmit, isEditMode=false, merchantInfo={} } = this.props;
 
         return (
-            <AddMerchantComponent onSubmit={handleSubmit} onBlur={onBlur}/>
+            <AddMerchantComponent onSubmit={handleSubmit} isEditMode={isEditMode} merchantInfo={merchantInfo} />
         )
     }
 }

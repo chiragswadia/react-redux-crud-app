@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Button, Modal } from 'react-bootstrap';
-import { Field, reduxForm } from 'redux-form';
+import { Field, reduxForm, formValueSelector } from 'redux-form';
 import SelectList from 'react-widgets/lib/SelectList';
 import 'react-widgets/dist/css/react-widgets.css'
 
@@ -23,16 +24,29 @@ class AddMerchantComponent extends Component{
     }
 
     render(){
-        const { handleSubmit } = this.props;
+        const { handleSubmit, isEditMode=false, merchantInfo={} } = this.props;
+
+        // if( this.props.isEditMode && this.state.show ){ // edit mode
+        //     this.props.initialize({
+        //         firstname: merchantInfo.firstname,
+        //         lastname: merchantInfo.lastname,
+        //         email: merchantInfo.email,
+        //         phone: merchantInfo.phone,
+        //         avatarUrl: merchantInfo.avatarUrl,
+        //         hasPremium: merchantInfo.hasPremium === true ? 'Yes' : 'No'
+        //     });
+        // }else{ // add mode
+        //     this.props.initialize({});
+        // }
 
         const renderSelectList = ({ input, data }) =>
-        <SelectList {...input}
-            onBlur={() => input.onBlur()}
-            data={data} />
+            <SelectList {...input}
+                onBlur={() => input.onBlur()}
+                data={data} />
 
         return (
             <div>
-                <Button bsStyle="default" className="mdBtn" onClick={ () => this.open() }>{'Add Merchant'}</Button>
+                <Button bsStyle="default" className="mdBtn" onClick={ () => this.open() }>{isEditMode ? 'Update Merchant': 'Add Merchant'}</Button>
                 {this.state.show &&
                     <Modal className="modal-container addMerchantModal" 
                         show={this.state.show} 
@@ -67,7 +81,7 @@ class AddMerchantComponent extends Component{
                                         <Field name="avatarUrl" className="form-control" component="input" type="text" />
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="premium">Premium</label>
+                                        <label htmlFor="hasPremium">Premium</label>
                                         <Field
                                             name="hasPremium"
                                             component={renderSelectList}
@@ -76,11 +90,10 @@ class AddMerchantComponent extends Component{
                                         />
                                     </div>
 
-                                    <Button type="submit" bsStyle="default" className="mdBtn" >{'Add Merchant'}</Button>
+                                    <Button type="submit" bsStyle="default" className="mdBtn" >{isEditMode ? 'Update Merchant': 'Add Merchant'}</Button>
                                 </form>
                             </div>
                         </Modal.Body>
-                                
                     </Modal>
                 }
             </div>

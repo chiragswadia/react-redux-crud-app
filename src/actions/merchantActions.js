@@ -38,7 +38,7 @@ const deleteMerchant = (id) => {
     return (dispatch, getState) => {
         axios.delete(API_SERVER + '/merchants/' + id).then(function(response){
             dispatch( deleteMerchantSuccess() );
-            dispatch( getMerchantList() );
+            dispatch( getMerchantList() ); // fetch all merchants again so that sorting and pagination is taken care of
         }, function(error){
             dispatch( deleteMerchantFailure() );
         });
@@ -69,7 +69,7 @@ const addMerchant = (request_data) => {
     return (dispatch, getState) => {
         axios.post(API_SERVER + '/merchants', request_data).then(function(){
             dispatch( addMerchantSuccess() );
-            dispatch( getMerchantList() );
+            dispatch( getMerchantList() ); // fetch all merchants again so that sorting and pagination is taken care of
         }).catch(function(error){
             dispatch( addMerchantFailure() );
         })

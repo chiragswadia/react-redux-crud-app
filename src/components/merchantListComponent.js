@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import MerchantComponent from './merchantComponent';
 import BidsModalComponent from './bidsModalComponent';
 import DeleteMerchantComponent from './deleteMerchantComponent';
+import AddMerchantContainer from '../containers/addMerchantContainer';
 
 class MerchantListComponent extends Component{
     render(){
@@ -32,6 +33,9 @@ class MerchantListComponent extends Component{
                                 id={merchant.id}
                                 deleteMerchant={() => deleteMerchant(merchant.id)}
                             />}
+                        updateMerchantComponent={
+                            <AddMerchantContainer key={'edit-' + merchant.id} isEditMode={true} merchantInfo={merchant} />
+                        }
                     />
                 )}
 
