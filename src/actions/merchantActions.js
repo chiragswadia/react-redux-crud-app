@@ -1,11 +1,13 @@
 import * as actionTypes from './actionTypes';
-import * as mockApi from '../services/mockApi';
+import axios from 'axios';
+
+const API_SERVER = 'http://localhost:3001';
 
 const getMerchantList = () => {
 
     return (dispatch, getState) => {
-        mockApi.getMerchants().then(function(response){
-            const merchantList = response.data; // merchant list array
+        axios.get(API_SERVER + '/merchants').then(function(response){
+            const merchantList = response.data;
             dispatch( getMerchantListSuccess(merchantList) )
         }, function(error){
             dispatch( getMerchantListFailure(error) ) // log the error or show in popup/alert
@@ -36,7 +38,7 @@ const getMerchantListFailure = (error) => {
 
 const deleteMerchant = (id) => {
     return (dispatch, getState) => {
-        mockApi.deleteMerchant(id).then(function(response){
+        axios.delete(API_SERVER + '/merchants/' + id).then(function(response){
             dispatch( deleteMerchantSuccess() );
             dispatch( getMerchantList() );
         }, function(error){
