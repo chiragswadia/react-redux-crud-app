@@ -13,7 +13,7 @@ class DeleteMerchantComponent extends Component{
                 body="Are you sure you want to delete this merchant ?"
                 confirmText="Delete"
                 title="Delete Merchant">
-                <Button bsStyle="default" className="mdBtn">{'Delete'}</Button>
+                <Button bsStyle="danger" bsSize="xsmall" className="mdBtn">{'Delete'}</Button>
             </Confirm>
         )
 

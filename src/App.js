@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReduxToastr from 'react-redux-toastr';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -9,10 +10,22 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          Welcome to Merchants App
+          Merchants Management App
         </div>
 
-        <MerchantListContainer />
+        <div className="container">
+          <MerchantListContainer />
+        </div>
+
+        <ReduxToastr
+          timeOut={4000}
+          newestOnTop={false}
+          preventDuplicates
+          position="top-center"
+          transitionIn="fadeIn"
+          transitionOut="fadeOut"
+          progressBar
+        />
         
       </div>
     );

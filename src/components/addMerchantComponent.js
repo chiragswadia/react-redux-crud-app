@@ -14,7 +14,7 @@ class AddMerchantComponent extends Component{
         }
     }
 
-    open(){
+    handleShow(){
         this.setState({show: true})
         if( this.props.isEditMode ){
             // transform value of hasPremium from boolean to Yes/No
@@ -23,7 +23,7 @@ class AddMerchantComponent extends Component{
         this.props.dispatch(initialize('addmerchant', this.props.initialValues)) // set form values
     }
 
-    close(){
+    handleClose(){
         this.setState({show: false})
     }
 
@@ -37,16 +37,17 @@ class AddMerchantComponent extends Component{
 
         return (
             <div>
-                <Button bsStyle="default" className="mdBtn" onClick={ () => this.open() }>{isEditMode ? 'Update Merchant': 'Add Merchant'}</Button>
+                <Button bsStyle="primary" bsSize={isEditMode ? 'xsmall' : 'sm'} className="mdBtn add" onClick={() => this.handleShow()}>{isEditMode ? 'Update Merchant': 'Add Merchant +'}</Button>
                 {this.state.show &&
                     <Modal className="modal-container addMerchantModal" 
                         show={this.state.show} 
                         animation={true}
+                        onHide={() => this.handleClose()}
                         >
 
-                        <div className="closeButton">
-                            <a onClick={() => this.close()}>Close</a>
-                        </div>
+                        <Modal.Header closeButton>
+                            <Modal.Title>{isEditMode ? 'Update Merchant' : 'Add Merchant'}</Modal.Title>
+                        </Modal.Header>
 
                         <Modal.Body>
                             <div className="addMerchantModalContainer">
@@ -85,7 +86,7 @@ class AddMerchantComponent extends Component{
                                         />
                                     </div>
 
-                                    <Button type="submit" bsStyle="default" className="mdBtn" >{isEditMode ? 'Update Merchant': 'Add Merchant'}</Button>
+                                    <Button type="submit" bsStyle="primary" className="mdBtn" >{isEditMode ? 'Update Merchant': 'Add Merchant'}</Button>
                                 </form>
                             </div>
                         </Modal.Body>

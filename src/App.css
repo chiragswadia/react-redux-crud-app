@@ -1,52 +1,77 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  animation: App-logo-appearance 1.6s ease-in;
-  height: 80px;
-  background: white;
-  padding: 15px 0;
-  border-radius: 3px;
+body {
+  overflow-x: hidden;
 }
 
 .App-header {
-  background-color: #1B4691;
+  background-color: #337ab7;
   height: 50px;
   padding: 15px;
   color: white;
+  text-align: center;
 }
 
 .App-intro {
   font-size: large;
 }
 
-@keyframes App-logo-appearance {
-  from {
-    opacity: 0;
-    transform: scale(0.1) rotate(30deg);
-    transform-origin: center bottom;
-  }
+img {
+  max-width: 100%; }
 
-  50% {
-    transform: rotate(-10deg);
-  }
-
-  70% {
-    transform: rotate(3deg);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
 
 /* Merchant Component Styles */
-.singleMerchantContainer{
-  width: 450px;
-  margin: 5px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  overflow: hidden;
+
+.card {
+  background: #eee;
+  padding: 1em 3em;
+  line-height: 1em;
+  margin: 20px 30px;
+}
+
+@media screen and (min-width: 997px) {
+  .wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; } }
+
+.details {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+.premium span {
+  color: #ff9f1a; }
+
+.merchant-name {
+  margin-top: 0; }
+
+.merchant-param {
+  margin-right: 10px; }
+  .merchant-param:first-of-type {
+    margin-left: 40px; }
+
+.orange {
+  background: #ff9f1a; }
+
+.green {
+  background: #85ad00; }
+
+.blue {
+  background: #0076ad; }
+
+.action .btn{
+  float:left;
+  margin-right: 10px;
+}
+
+.btn.btn-sm{
+  margin-top: 20px;
+  margin-left: 30px;
 }

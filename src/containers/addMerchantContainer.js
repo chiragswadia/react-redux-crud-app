@@ -5,6 +5,7 @@ import {reset} from 'redux-form';
 import AddMerchantComponent from '../components/addMerchantComponent';
 import { addMerchant, updateMerchant } from '../actions/merchantActions';
 
+//#TODO - Remove if unused
 const mapStateToProps = (state, nextProps) => ({
    
 });

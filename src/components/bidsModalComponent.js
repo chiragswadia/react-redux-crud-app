@@ -11,11 +11,11 @@ class BidsModalComponent extends Component{
         }
     }
 
-    open(){
+    handleShow(){
         this.setState({show: true})
     }
 
-    close(){
+    handleClose(){
         this.setState({show: false})
     }
 
@@ -26,17 +26,18 @@ class BidsModalComponent extends Component{
 
             <div>
                 {bids.length > 0 &&
-                <Button bsStyle="default" className="mdBtn" onClick={() => this.open()}>{'Show Bids'}</Button>}
+                <Button bsStyle="success" bsSize="xsmall" className="mdBtn" onClick={() => this.handleShow()}>{'Show Bids'}</Button>}
 
                 {this.state.show &&
                     <Modal className="modal-container bidsModal" 
                         show={this.state.show} 
                         animation={true}
+                        onHide={() => this.handleClose() }
                         >
 
-                        <div className="closeButton">
-                            <a onClick={() => this.close()}>Close</a>
-                        </div>
+                        <Modal.Header closeButton>
+                            <Modal.Title>{'List of Bids'}</Modal.Title>
+                        </Modal.Header>
 
                         <Modal.Body>
                             <div className="bidsModalContainer">
