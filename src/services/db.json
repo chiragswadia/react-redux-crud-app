@@ -8,6 +8,7 @@
       "email": "johnsnow@gmail.com",
       "phone": "9090909090",
       "hasPremium": true,
+      "timestamp": 1520713176,
       "bids": [
         {
           "id": "b1",
@@ -24,6 +25,7 @@
       "avatarUrl": "https://placeimg.com/151/151/people",
       "email": "strange@gmail.com",
       "phone": "9090909090",
+      "timestamp": 1520715176,
       "hasPremium": true,
       "bids": [
         {
@@ -41,16 +43,6 @@
       ]
     },
     {
-      "firstname": "Chirag",
-      "lastname": "Swadia",
-      "email": "chiragswadia@mailinator.com",
-      "phone": "9689812518",
-      "avatarUrl": "https://placeimg.com/149/149/people",
-      "hasPremium": false,
-      "bids": [],
-      "id": "XEF8fdP"
-    },
-    {
       "firstname": "Doctor",
       "lastname": "Strange",
       "email": "doctor@gmail.com",
@@ -58,7 +50,19 @@
       "hasPremium": false,
       "phone": "9090909090",
       "bids": [],
+      "timestamp": 1520716174,
       "id": "YOUOQFo"
+    },
+    {
+      "firstname": "Chirag",
+      "lastname": "Swadia",
+      "email": "chiragswadia@mailinator.com",
+      "phone": "9689812518",
+      "avatarUrl": "https://placeimg.com/150/150/people",
+      "hasPremium": false,
+      "bids": [],
+      "timestamp": 1520716176,
+      "id": "qmnFLlE"
     }
   ]
 }

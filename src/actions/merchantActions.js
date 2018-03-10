@@ -6,7 +6,7 @@ const API_SERVER = 'http://localhost:3001';
 
 const getMerchantList = () => {
     return (dispatch, getState) => {
-        axios.get(API_SERVER + '/merchants').then(function(response){
+        axios.get(API_SERVER + '/merchants?_sort=timestamp&_order=desc').then(function(response){
             const merchantList = response.data;
             dispatch( getMerchantListSuccess(merchantList) )
         }, function(error){

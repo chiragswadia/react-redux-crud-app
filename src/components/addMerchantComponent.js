@@ -82,7 +82,6 @@ class AddMerchantComponent extends Component{
                                             name="hasPremium"
                                             component={renderSelectList}
                                             data={[ 'Yes', 'No' ]}
-                                            defaultValue={'No'}
                                         />
                                     </div>
 
