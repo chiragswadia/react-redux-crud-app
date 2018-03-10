@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { Button, Modal } from 'react-bootstrap';
-import { Field, reduxForm, formValueSelector } from 'redux-form';
+import { Field, reduxForm, initialize } from 'redux-form';
 import SelectList from 'react-widgets/lib/SelectList';
 import 'react-widgets/dist/css/react-widgets.css'
 
@@ -17,6 +16,11 @@ class AddMerchantComponent extends Component{
 
     open(){
         this.setState({show: true})
+        if( this.props.isEditMode ){
+            // transform value of hasPremium from boolean to Yes/No
+            this.props.initialValues['hasPremium'] = this.props.initialValues['hasPremium'] ? 'Yes' : 'No';  
+        }
+        this.props.dispatch(initialize('addmerchant', this.props.initialValues)) // set form values
     }
 
     close(){
@@ -24,21 +28,8 @@ class AddMerchantComponent extends Component{
     }
 
     render(){
-        const { handleSubmit, isEditMode=false, merchantInfo={} } = this.props;
-
-        // if( this.props.isEditMode && this.state.show ){ // edit mode
-        //     this.props.initialize({
-        //         firstname: merchantInfo.firstname,
-        //         lastname: merchantInfo.lastname,
-        //         email: merchantInfo.email,
-        //         phone: merchantInfo.phone,
-        //         avatarUrl: merchantInfo.avatarUrl,
-        //         hasPremium: merchantInfo.hasPremium === true ? 'Yes' : 'No'
-        //     });
-        // }else{ // add mode
-        //     this.props.initialize({});
-        // }
-
+        const { handleSubmit, isEditMode=false } = this.props;
+        
         const renderSelectList = ({ input, data }) =>
             <SelectList {...input}
                 onBlur={() => input.onBlur()}
@@ -60,25 +51,29 @@ class AddMerchantComponent extends Component{
                         <Modal.Body>
                             <div className="addMerchantModalContainer">
                                 <form onSubmit={handleSubmit}>
+
+                                    {isEditMode &&
+                                    <Field name="id" className="form-control" component="input" type="hidden" />}
+
                                     <div className="form-group">
                                         <label htmlFor="firstname">First Name</label>
-                                        <Field name="firstname" className="form-control" component="input" type="text" />
+                                        <Field required name="firstname" className="form-control" component="input" type="text" />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="lastname">Last Name</label>
-                                        <Field name="lastname" className="form-control" component="input" type="text" />
+                                        <Field required name="lastname" className="form-control" component="input" type="text" />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="email">Email</label>
-                                        <Field name="email" className="form-control" component="input" type="email" />
+                                        <Field required name="email" className="form-control" component="input" type="email" />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="phone">Phone Number</label>
-                                        <Field name="phone" className="form-control" component="input" type="text" />
+                                        <Field required name="phone" className="form-control" component="input" type="number" />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="avatarUrl">Avatar URL</label>
-                                        <Field name="avatarUrl" className="form-control" component="input" type="text" />
+                                        <Field required name="avatarUrl" className="form-control" component="input" type="text" />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="hasPremium">Premium</label>

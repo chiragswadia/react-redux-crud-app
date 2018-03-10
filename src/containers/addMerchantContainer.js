@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import {reset} from 'redux-form';
 
 import AddMerchantComponent from '../components/addMerchantComponent';
-import { addMerchant } from '../actions/merchantActions';
+import { addMerchant, updateMerchant } from '../actions/merchantActions';
 
 const mapStateToProps = (state, nextProps) => ({
    
@@ -15,7 +15,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
         formData['hasPremium'] = (formData['hasPremium'] === 'Yes') ? true : false; // If user has explicitly selected Yes
         
         if( ownProps.isEditMode ){
-            
+            dispatch( updateMerchant(formData) );
         }else{
             formData['bids'] = []; // For new record, bids count will be blank
             dispatch( addMerchant(formData) );
@@ -30,10 +30,10 @@ class AddMerchantContainer extends Component{
 
     render(){
 
-        const { handleSubmit, isEditMode=false, merchantInfo={} } = this.props;
-
+        const { handleSubmit, isEditMode=false, initialValues } = this.props;
+        
         return (
-            <AddMerchantComponent onSubmit={handleSubmit} isEditMode={isEditMode} merchantInfo={merchantInfo} />
+            <AddMerchantComponent initialValues={initialValues} onSubmit={handleSubmit} isEditMode={isEditMode} />
         )
     }
 }

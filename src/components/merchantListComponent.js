@@ -34,7 +34,7 @@ class MerchantListComponent extends Component{
                                 deleteMerchant={() => deleteMerchant(merchant.id)}
                             />}
                         updateMerchantComponent={
-                            <AddMerchantContainer key={'edit-' + merchant.id} isEditMode={true} merchantInfo={merchant} />
+                            <AddMerchantContainer key={'edit-' + merchant.id} isEditMode={true} initialValues={merchant} />
                         }
                     />
                 )}

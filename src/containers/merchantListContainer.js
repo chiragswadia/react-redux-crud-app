@@ -31,7 +31,7 @@ class MerchantListContainer extends Component{
 
         return (
             <div>
-                <AddMerchantContainer />
+                <AddMerchantContainer isEditMode={false} initialValues={{}} />
                 <MerchantListComponent merchantList={merchantList} deleteMerchant={deleteMerchant} />
             </div>
         )

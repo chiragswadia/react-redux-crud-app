@@ -94,14 +94,40 @@ const addMerchantFailure = (error) => {
     }
 };
 
+/*******************************************************************************************/
+
+const updateMerchant = (request_data) => {
+    return (dispatch, getState) => {
+        axios.put(API_SERVER + '/merchants/' + request_data['id'], request_data).then(function(response){
+            dispatch( updateMerchantSuccess(response.data) );
+        }).catch(function(error){
+            dispatch( updateMerchantFailure() );
+        })
+    }
+};
+
+const updateMerchantSuccess = (updatedMerchantData) => {
+    return {
+        type: actionTypes.UPDATE_MERCHANT_SUCCESS,
+        payload: {
+            ...updatedMerchantData
+        }
+    }
+};
+
+const updateMerchantFailure = (error) => {
+    return {
+        type: actionTypes.UPDATE_MERCHANT_FAILURE,
+        payload: {
+
+        }
+    }
+};
+
+
 export {
-    getMerchantList,
-    getMerchantListSuccess,
-    getMerchantListFailure,
-    deleteMerchant,
-    deleteMerchantSuccess,
-    deleteMerchantFailure,
     addMerchant,
-    addMerchantSuccess,
-    addMerchantFailure
+    deleteMerchant,
+    getMerchantList,
+    updateMerchant,
 };
