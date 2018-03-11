@@ -36,16 +36,18 @@ class BidsModalComponent extends Component{
                         >
 
                         <Modal.Header closeButton>
-                            <Modal.Title>{'List of Bids'}</Modal.Title>
+                            <Modal.Title>{'Bids'}</Modal.Title>
                         </Modal.Header>
 
                         <Modal.Body>
                             <div className="bidsModalContainer">
                                 <table className="table table-striped">
                                     <thead>
-                                        <th>Car</th>
-                                        <th>Amount</th>
-                                        <th>Created On</th>
+                                        <tr>
+                                            <th>Car</th>
+                                            <th>Amount ( Euros )</th>
+                                            <th>Date</th>
+                                        </tr>
                                     </thead>
                                     <tbody>
                                         {bids.map( (bid) => 

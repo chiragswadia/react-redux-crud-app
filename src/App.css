@@ -26,6 +26,7 @@ img {
   padding: 1em 3em;
   line-height: 1em;
   margin: 20px 30px;
+  height: 218px;
 }
 
 @media screen and (min-width: 997px) {

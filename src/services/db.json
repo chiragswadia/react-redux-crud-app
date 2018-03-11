@@ -5,64 +5,126 @@
       "firstname": "John",
       "lastname": "Snow",
       "avatarUrl": "https://placeimg.com/150/150/people",
-      "email": "johnsnow@gmail.com",
+      "email": "johnsnow_got@gmail.com",
       "phone": "9090909090",
       "hasPremium": true,
       "timestamp": 1520713176,
-      "bids": [
-        {
-          "id": "b1",
-          "carTitle": "Car Title Example",
-          "amount": "20000",
-          "created": "2018-03-07"
-        }
-      ]
+      "bids": []
     },
     {
-      "id": "2",
       "firstname": "Tony",
       "lastname": "Stark Iron Man",
-      "avatarUrl": "https://placeimg.com/151/151/people",
-      "email": "strange@gmail.com",
+      "email": "tony@gmail.com",
       "phone": "9090909090",
-      "timestamp": 1520715176,
+      "avatarUrl": "https://placeimg.com/150/150/people",
       "hasPremium": true,
-      "bids": [
-        {
-          "id": "b2",
-          "carTitle": "Car Title Example",
-          "amount": "12000",
-          "created": "2018-03-06"
-        },
-        {
-          "id": "b3",
-          "carTitle": "Car Title Example 2",
-          "amount": "15000",
-          "created": "2018-03-07"
-        }
-      ]
+      "bids": [],
+      "timestamp": 1520765428,
+      "id": "CwGmqtI"
     },
     {
-      "firstname": "Doctor",
-      "lastname": "Strange",
-      "email": "doctor@gmail.com",
+      "firstname": "Marco",
+      "lastname": "Blau",
+      "email": "marco@gmail.com",
+      "phone": "03361932025",
+      "avatarUrl": "https://placeimg.com/150/150/tech",
+      "hasPremium": false,
+      "bids": [],
+      "timestamp": 1520766434,
+      "id": "mYyhN1S"
+    },
+    {
+      "firstname": "Erik",
+      "lastname": "Meyer",
+      "email": "erik@gmail.com",
+      "phone": "0201181115",
+      "avatarUrl": "https://placeimg.com/150/150/people",
+      "hasPremium": true,
+      "bids": [],
+      "timestamp": 1520766516,
+      "id": "otQtiUh"
+    },
+    {
+      "firstname": "Michael",
+      "lastname": "Eiffel",
+      "email": "michael@gmail.com",
+      "phone": "089752191",
+      "avatarUrl": "https://placeimg.com/150/150/tech",
+      "hasPremium": true,
+      "bids": [],
+      "timestamp": 1520766614,
+      "id": "aJQLcm4"
+    },
+    {
+      "firstname": "Philipp",
+      "lastname": "Holtzmann",
+      "email": "philipp@gmail.com",
+      "phone": "0201181115",
       "avatarUrl": "https://placeimg.com/150/150/people",
       "hasPremium": false,
-      "phone": "9090909090",
+      "bids": [
+        {
+          "id": "g8VzaYZ_bid_1",
+          "carTitle": "Audi A6",
+          "amount": "35000",
+          "created": "2018-03-09"
+        },
+        {
+          "id": "g8VzaYZ_bid_2",
+          "carTitle": "Volkswagen Vento",
+          "amount": "27000",
+          "created": "2018-03-08"
+        },
+        {
+          "id": "g8VzaYZ_bid_3",
+          "carTitle": "BMW X",
+          "amount": "24000",
+          "created": "2018-03-03"
+        }
+      ],
+      "timestamp": 1520766669,
+      "id": "g8VzaYZ"
+    },
+    {
+      "firstname": "Sven",
+      "lastname": "Fleischer",
+      "email": "sven@gmail.com",
+      "phone": "0301345679",
+      "avatarUrl": "https://placeimg.com/150/150/people",
+      "hasPremium": true,
       "bids": [],
-      "timestamp": 1520716174,
-      "id": "YOUOQFo"
+      "timestamp": 1520766777,
+      "id": "ZTH6_Nx"
     },
     {
       "firstname": "Chirag",
       "lastname": "Swadia",
-      "email": "chiragswadia@mailinator.com",
+      "email": "chirag.swadia@gmail.com",
       "phone": "9689812518",
-      "avatarUrl": "https://placeimg.com/150/150/people",
-      "hasPremium": false,
-      "bids": [],
-      "timestamp": 1520716176,
-      "id": "qmnFLlE"
+      "avatarUrl": "https://pbs.twimg.com/profile_images/776374461905809409/cmjCGuzR_400x400.jpg",
+      "hasPremium": true,
+      "bids": [
+        {
+          "id": "wDsOQTi_bid_1",
+          "carTitle": "Audi A6",
+          "amount": "30000",
+          "created": "2018-03-11"
+        },
+        {
+          "id": "wDsOQTi_bid_2",
+          "carTitle": "Volkswagen Vento",
+          "amount": "20000",
+          "created": "2018-03-10"
+        },
+        {
+          "id": "wDsOQTi_bid_3",
+          "carTitle": "BMW X",
+          "amount": "22000",
+          "created": "2018-03-09"
+        }
+      ],
+      "timestamp": 1520766832,
+      "id": "wDsOQTi"
     }
   ]
 }

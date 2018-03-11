@@ -3,14 +3,20 @@ import * as actionTypes from './actionTypes';
 import axios from 'axios';
 
 const API_SERVER = 'http://localhost:3001';
+const MERCHANTS_PER_PAGE = 6;
 
-const getMerchantList = () => {
+const getMerchantList = (pageLink='') => {
+
+    const fetchMerchantsDefaultPageLink = API_SERVER + '/merchants?_sort=timestamp&_order=desc&_page=1&_limit=' + MERCHANTS_PER_PAGE;
+    const fetchMerchantsLink = pageLink ? pageLink : fetchMerchantsDefaultPageLink;
+
     return (dispatch, getState) => {
-        axios.get(API_SERVER + '/merchants?_sort=timestamp&_order=desc').then(function(response){
+        axios.get(fetchMerchantsLink).then(function(response){
             const merchantList = response.data;
             dispatch( getMerchantListSuccess(merchantList) )
+            dispatch( updatePaginationState(response.headers.link) );
         }, function(error){
-            dispatch( getMerchantListFailure(error) ) // log the error or show in popup/alert
+            dispatch( getMerchantListFailure(error) );
         })
     }
 };
@@ -131,6 +137,28 @@ const updateMerchantFailure = (error) => {
     }
 };
 
+const updatePaginationState = (paginationLinks) => {
+    // Extract next previous links from the above string
+    const paginationLinksList = paginationLinks.split(',');
+    let nextPageLink = '';
+    let previousPageLink = '';
+    paginationLinksList.map( (link) => {
+        if ( link.includes('rel="next"') ) {
+            nextPageLink = link.split('; ')[0].trim().slice(1, -1);
+        }else if ( link.includes('rel="prev"') ){
+            previousPageLink = link.split('; ')[0].trim().slice(1, -1);
+        }
+        return link;
+    })
+
+    return {
+        type: actionTypes.UPDATE_PAGINATION_STATE,
+        payload: {
+            nextPageLink,
+            previousPageLink
+        }
+    }
+}
 
 export {
     addMerchant,

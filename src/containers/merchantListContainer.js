@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import AddMerchantContainer from './addMerchantContainer';
+import AddUpdateMerchantContainer from '../containers/addUpdateMerchantContainer';
 import MerchantListComponent from '../components/merchantListComponent';
 import { getMerchantList, deleteMerchant } from '../actions/merchantActions';
+import { Pager } from 'react-bootstrap';
 
 const mapStateToProps = (state, nextProps) => ({
-   merchantList: state.merchantReducer.merchantList
+   merchantList: state.merchantReducer.merchantList,
+   nextPageLink: state.merchantReducer.nextPageLink,
+   previousPageLink: state.merchantReducer.previousPageLink
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    getMerchantList: () => {
-        dispatch( getMerchantList() );
+    getMerchantList: (pageLink='') => {
+        dispatch( getMerchantList(pageLink) );
     },
 
     deleteMerchant: (id) => {
@@ -27,12 +30,26 @@ class MerchantListContainer extends Component{
 
     render = () => {
 
-        const { merchantList, deleteMerchant } = this.props;
+        const { merchantList, deleteMerchant, getMerchantList, previousPageLink, nextPageLink } = this.props;
 
         return (
-            <div>
-                <AddMerchantContainer isEditMode={false} initialValues={{}} />
+            <div className="container">
+                <AddUpdateMerchantContainer isEditMode={false} initialValues={{}} />
                 <MerchantListComponent merchantList={merchantList} deleteMerchant={deleteMerchant} />
+
+                <Pager>
+                    {previousPageLink &&
+                        <Pager.Item previous onClick={() => getMerchantList(previousPageLink)}>
+                            &larr; Previous Page
+                        </Pager.Item>
+                    }
+
+                    {nextPageLink &&
+                        <Pager.Item next onClick={() => getMerchantList(nextPageLink)}>
+                            Next Page &rarr;
+                        </Pager.Item>
+                    }
+                </Pager>
             </div>
         )
     }
