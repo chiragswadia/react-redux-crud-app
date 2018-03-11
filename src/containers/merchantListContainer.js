@@ -33,7 +33,7 @@ class MerchantListContainer extends Component{
         const { merchantList, deleteMerchant, getMerchantList, previousPageLink, nextPageLink } = this.props;
 
         return (
-            <div className="container">
+            <div className="merchantListContainer container">
                 <AddUpdateMerchantContainer isEditMode={false} initialValues={{}} />
                 <MerchantListComponent merchantList={merchantList} deleteMerchant={deleteMerchant} />
 

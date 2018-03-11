@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Modal, Button } from 'react-bootstrap';
+import { Modal, Button, Table } from 'react-bootstrap';
 
 class BidsModalComponent extends Component{
 
@@ -41,7 +41,7 @@ class BidsModalComponent extends Component{
 
                         <Modal.Body>
                             <div className="bidsModalContainer">
-                                <table className="table table-striped">
+                                <Table bordered striped hover>
                                     <thead>
                                         <tr>
                                             <th>Car</th>
@@ -58,7 +58,7 @@ class BidsModalComponent extends Component{
                                             </tr>        
                                         )}
                                     </tbody>
-                                </table>          
+                                </Table>          
                             </div>
                         </Modal.Body>
                                 
