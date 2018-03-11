@@ -21,7 +21,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
             formData['bids'] = []; // For new record, bids count will be blank
             formData['timestamp'] = Math.round(+new Date()/1000);
             dispatch( addMerchant(formData) );
-            dispatch( reset('addmerchant') );
+            dispatch( reset('addupdatemerchant') );
         }
         
     },
