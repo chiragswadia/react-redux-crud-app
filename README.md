@@ -12,3 +12,14 @@ Once you run the above commands, a mock JSON server will be spawned at localhost
 - Custom form validation is not implemented, and only HTML5 form validation is been used.
 - propTypes validation
 - Loading indicator / spinner functioality is not added in this app as of now.
+- Unit test cases
+
+# Additional Packages / Libraries used
+- axios ( for making API calls )
+- bootstrap ( modal and other styling )
+- concurrently ( To spawn json-server and main app concurrently )
+- json-server ( mock api server )
+- redux-form ( add / update merchant forms )
+- react-redux-toastr ( success / error notifications )
+- redux-thunk ( async actions dispatch )
+- react-redux ( helper library )
