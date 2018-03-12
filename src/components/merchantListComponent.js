@@ -5,6 +5,9 @@ import BidsModalComponent from './bidsModalComponent';
 import DeleteMerchantComponent from './deleteMerchantComponent';
 import AddUpdateMerchantContainer from '../containers/addUpdateMerchantContainer';
 
+/**
+ * This component will render the list of merchants
+ */
 class MerchantListComponent extends Component{
     render(){
 

@@ -4,6 +4,9 @@ import { Field, reduxForm, initialize } from 'redux-form';
 import SelectList from 'react-widgets/lib/SelectList';
 import 'react-widgets/dist/css/react-widgets.css'
 
+/**
+ * This component is used for rendering the form for Add/Update merchant
+ */
 class AddUpdateMerchantComponent extends Component{
 
     constructor(props, context){
@@ -15,20 +18,31 @@ class AddUpdateMerchantComponent extends Component{
     }
 
     handleShow(){
+        // Show modal popup
         this.setState({show: true})
+
         if( this.props.isEditMode ){
             // transform value of hasPremium from boolean to Yes/No
             this.props.initialValues['hasPremium'] = this.props.initialValues['hasPremium'] ? 'Yes' : 'No';  
         }
+
+        // Initialize  the form again with new values
         this.props.dispatch(initialize('addupdatemerchant', this.props.initialValues)) // set form values
     }
 
     handleClose(){
+        // Hide modal popup
         this.setState({show: false})
     }
 
+    handleSubmit(formData){
+        this.props.handleSubmit(formData);
+        // Hide modal popup after form submission
+        this.setState({show: false});
+    }
+
     render(){
-        const { handleSubmit, isEditMode=false } = this.props;
+        const { isEditMode=false } = this.props;
         
         const renderSelectList = ({ input, data }) =>
             <SelectList {...input}
@@ -51,7 +65,7 @@ class AddUpdateMerchantComponent extends Component{
 
                         <Modal.Body>
                             <div className="addMerchantModalContainer">
-                                <form onSubmit={handleSubmit}>
+                                <form onSubmit={() => this.handleSubmit()}>
 
                                     {isEditMode &&
                                     <Field name="id" className="form-control" component="input" type="hidden" />}
@@ -97,6 +111,7 @@ class AddUpdateMerchantComponent extends Component{
     }
 }
 
+// Initialize redux form
 AddUpdateMerchantComponent = reduxForm({
     form: 'addupdatemerchant'
 })(AddUpdateMerchantComponent)

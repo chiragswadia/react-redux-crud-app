@@ -1,3 +1,8 @@
+/**
+ * Actions types used by Redux
+ *
+ */
+
 export const GET_MERCHANTS_LIST_SUCCESS = 'GET_MERCHANTS_LIST_SUCCESS';
 export const GET_MERCHANTS_LIST_FAILURE = 'GET_MERCHANTS_LIST_FAILURE';
 

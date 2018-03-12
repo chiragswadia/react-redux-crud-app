@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
 import { Confirm } from 'react-confirm-bootstrap';
 
+/**
+ * This component will render the Delete merchant button and delete confirmation popup
+ */
 class DeleteMerchantComponent extends Component{
 
     render(){

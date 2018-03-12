@@ -22,6 +22,9 @@ const mapDispatchToProps = (dispatch) => ({
     }
 });
 
+/**
+ * This container component will handle state management / actions for MerchantListComponent
+ */
 class MerchantListContainer extends Component{
 
     componentWillMount = () => {

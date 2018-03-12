@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+/**
+ * This component will render a single merchant card with related details and actions
+ */
 class MerchantComponent extends Component{
     render(){
         const { firstname, lastname, avatarUrl, email, phone, hasPremium, bidsModalComponent, deleteMerchantComponent, updateMerchantComponent} = this.props;

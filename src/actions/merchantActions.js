@@ -2,9 +2,16 @@ import {toastr} from 'react-redux-toastr'
 import * as actionTypes from './actionTypes';
 import axios from 'axios';
 
+/* API Server url for Ajax requests */
 const API_SERVER = 'http://localhost:3001';
+
+/* Number of merchants to be shown on a single page */
 const MERCHANTS_PER_PAGE = 6;
 
+/**
+ * This function is used for fetching the list of merchants from the back-end API
+ * @param pageLink
+ */
 const getMerchantList = (pageLink='') => {
 
     const fetchMerchantsDefaultPageLink = API_SERVER + '/merchants?_sort=timestamp&_order=desc&_page=1&_limit=' + MERCHANTS_PER_PAGE;
@@ -21,6 +28,10 @@ const getMerchantList = (pageLink='') => {
     }
 };
 
+
+/**
+ * Fetch merchant list success action dispatcher
+ */
 const getMerchantListSuccess = (merchantList) => {
     return {
         type: actionTypes.GET_MERCHANTS_LIST_SUCCESS,
@@ -30,6 +41,9 @@ const getMerchantListSuccess = (merchantList) => {
     }
 };
 
+/**
+ * Fetch merchant list failure action dispatcher
+ */
 const getMerchantListFailure = (error) => {
     return {
         type: actionTypes.GET_MERCHANTS_LIST_FAILURE,
@@ -39,8 +53,10 @@ const getMerchantListFailure = (error) => {
     }
 };
 
-/*************************************************************************************************/
-
+/**
+ * This function is used for deleting a particular merchant
+ * @param id id of the merchant to be deleted
+ */
 const deleteMerchant = (id) => {
     return (dispatch, getState) => {
         axios.delete(API_SERVER + '/merchants/' + id).then(function(response){
@@ -54,6 +70,9 @@ const deleteMerchant = (id) => {
     }
 };
 
+/**
+ * Delete merchant success action dispatcher
+ */
 const deleteMerchantSuccess = (response) => {
     return {
         type: actionTypes.DELETE_MERCHANT_SUCCESS,
@@ -63,6 +82,9 @@ const deleteMerchantSuccess = (response) => {
     }
 };
 
+/**
+ * Delete merchant failure action dispatcher
+ */
 const deleteMerchantFailure = (error) => {
     return {
         type: actionTypes.DELETE_MERCHANT_FAILURE,
@@ -72,8 +94,10 @@ const deleteMerchantFailure = (error) => {
     }
 };
 
-/*******************************************************************************************/
-
+/**
+ * This function is used to add a new merchant to the back-end
+ * @param request_data Single merchant information as object
+ */
 const addMerchant = (request_data) => {
     return (dispatch, getState) => {
         axios.post(API_SERVER + '/merchants', request_data).then(function(){
@@ -87,6 +111,9 @@ const addMerchant = (request_data) => {
     }
 };
 
+/**
+ * Add merchant success action dispatcher
+ */
 const addMerchantSuccess = () => {
     return {
         type: actionTypes.ADD_MERCHANT_SUCCESS,
@@ -96,6 +123,9 @@ const addMerchantSuccess = () => {
     }
 };
 
+/**
+ * Add merchant failure action dispatcher
+ */
 const addMerchantFailure = (error) => {
     return {
         type: actionTypes.ADD_MERCHANT_FAILURE,
@@ -105,8 +135,10 @@ const addMerchantFailure = (error) => {
     }
 };
 
-/*******************************************************************************************/
-
+/**
+ * This function is used to update details of a particular merchant
+ * @param request_data details of a single merchant which needs to be updated
+ */
 const updateMerchant = (request_data) => {
     return (dispatch, getState) => {
         axios.put(API_SERVER + '/merchants/' + request_data['id'], request_data).then(function(response){
@@ -119,6 +151,9 @@ const updateMerchant = (request_data) => {
     }
 };
 
+/**
+ * Update merchant success action dispatcher
+ */
 const updateMerchantSuccess = (updatedMerchantData) => {
     return {
         type: actionTypes.UPDATE_MERCHANT_SUCCESS,
@@ -128,6 +163,9 @@ const updateMerchantSuccess = (updatedMerchantData) => {
     }
 };
 
+/**
+ * Update merchant failure action dispatcher
+ */
 const updateMerchantFailure = (error) => {
     return {
         type: actionTypes.UPDATE_MERCHANT_FAILURE,
@@ -137,6 +175,10 @@ const updateMerchantFailure = (error) => {
     }
 };
 
+/**
+ * This function will dispatch the latest pagination state based on the pagination data returned from merchant listing API
+ * @param paginationLinks All links returned from the get merchant listing API response header
+ */
 const updatePaginationState = (paginationLinks) => {
     // Extract next previous links from the above string
     const paginationLinksList = paginationLinks.split(',');

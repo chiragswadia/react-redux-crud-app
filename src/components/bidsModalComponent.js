@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Modal, Button, Table } from 'react-bootstrap';
 
+/**
+ * This component will render the Show Bids button and modal popup for showing bids.
+ */
 class BidsModalComponent extends Component{
 
     constructor(props, context){
@@ -10,12 +13,14 @@ class BidsModalComponent extends Component{
             show: false
         }
     }
-
+    
     handleShow(){
+        // Show bids modal
         this.setState({show: true})
     }
 
     handleClose(){
+        // Hide bids modal
         this.setState({show: false})
     }
 
