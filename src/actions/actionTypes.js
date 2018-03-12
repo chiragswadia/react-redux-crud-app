@@ -1,5 +1,5 @@
 /**
- * Actions types used by Redux
+ * Action types used by Redux
  *
  */
 

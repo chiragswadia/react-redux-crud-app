@@ -11,8 +11,8 @@ Once you run the above commands, a mock JSON server will be spawned at localhost
 # Things which are not implemented
 - Custom form validation is not implemented, and only HTML5 form validation is been used.
 - propTypes validation
-- Loading indicator / spinner functioality is not added in this app as of now.
-- Unit test cases
+- Loading indicator / spinner functionality is not added in this app as of now.
+- Unit test cases ( Basic app load test is added with the help of Enzyme and Chai libraries )
 
 # Additional Packages / Libraries used
 - axios ( for making API calls )
