@@ -14,7 +14,7 @@ class MerchantListComponent extends Component{
         const { merchantList, deleteMerchant } = this.props;
 
         return (
-            <div className="container">
+            <div className="merchantListComponent container">
                 <div className="row">
                     {merchantList.map( (merchant) => 
                         <MerchantComponent
