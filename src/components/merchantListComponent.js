@@ -44,7 +44,9 @@ class MerchantListComponent extends Component{
                     )}
 
                     {!merchantList.length &&
-                        <div className="container">No Merchants Found</div>
+                        <div className="noMerchants container">No Merchants Found <br/> <br/>
+                        <i>Please check whether json-server is running at localhost:3001 before running this app</i>
+                        </div>
                     }
 
                 </div>
