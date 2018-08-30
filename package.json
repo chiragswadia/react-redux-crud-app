@@ -14,6 +14,7 @@
     "case-sensitive-paths-webpack-plugin": "2.1.1",
     "chai": "^4.1.2",
     "chalk": "1.1.3",
+    "compression-webpack-plugin": "^1.1.12",
     "concurrently": "^3.5.1",
     "css-loader": "0.28.4",
     "dotenv": "4.0.0",
@@ -54,11 +55,11 @@
     "url-loader": "0.5.9",
     "webpack": "3.5.1",
     "webpack-dev-server": "2.7.1",
-    "webpack-manifest-plugin": "1.2.1",
+    "webpack-manifest-plugin": "^2.0.3",
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
-    "start": "concurrently \"yarn json-server --watch .\\src\\services\\db.json --port 3001\" \"node scripts/start.js\" ",
+    "start": "concurrently \"json-server --watch src/services/db.json --port 3001\" \"node scripts/start.js\" ",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
