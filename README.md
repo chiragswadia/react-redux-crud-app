@@ -5,7 +5,9 @@
 
 Once you run the above commands, a mock JSON server will be spawned at http://localhost:3001 and the application will run at http://localhost:3000. Both these processes will run concurrently.
 
-If for some reason yarn/json-server command fails ( It happened with me on Git bash on Windows, but worked fine in Ubuntu default terminal ) install json-server globally using `npm install -g json-server` and then run `json-server --watch .\\src\\services\\db.json --port 3001` inside the app directory. Once json-server is running successfully, refresh the application page i.e. http://localhost:3000 . The merchants list should be visible and add/update/delete actions will work fine.
+If for some reason yarn/json-server command fails ( It happened with me on Git bash on Windows, but worked fine in Ubuntu default terminal ) install json-server globally using `npm install -g json-server` and then run `json-server --watch src/services/db.json --port 3001` inside the app directory. Once json-server is running successfully, refresh the application page i.e. http://localhost:3000 . The merchants list should be visible and add/update/delete actions will work fine.
+
+# Lighthouse Score ( Production Build )
 
 # Assumptions
 - As of now, there is no provision to submit bids and therefore all new merchants which will be added through the form will not have any bids listed under their name.
